@@ -1,0 +1,17 @@
+.nv>a{
+    margin: 5px;
+   }
+   .nv{
+       display: flex;
+       flex-direction: column;
+       width: 15%;
+       text-align: center;
+   }
+   .main{
+       display: flex;
+       flex-direction: row;
+   }
+   .olti>a{
+       background:greenyellow;
+       padding: 5px;
+   }

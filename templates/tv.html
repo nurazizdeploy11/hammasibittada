@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'tv.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+<div class="main">
+    <div class="nv">
+        <h4 class="text-info">category</h4>
+        {% for category in category %}
+        <a class="btn btn-outline-primary" href="{% url 'filmcategory' %}?category={{ category.name }}">{{ category.name }}</a>
+      {% endfor %}
+    </div>
+
+<!-- Product Cart Start -->
+ <div class="container">
+    <div class=" w-100 mt-4">
+        <div class="d-flex flex-wrap justify-content-between">
+            <h4 class="d-block" >filmlar</h4>
+            <form class="d-flex" method="get" >
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+              </form>
+        </div>
+        
+        <div class="d-flex flex-wrap justify-content-between ">
+            {% for film in film %}
+            <!-- Product Cart Start -->
+            <div class="card border border-0 shadow-sm d-inline-block m-1 mt-3" style="width: 16.5rem;" >
+                <img height="200" class=" card-img-top" src="{{ film.rasmi.url }}" alt="">
+                <div class="card-body">
+                    <h6 class="align-center card-title">{{ film.nomi }}</h6>
+                    <span class="center card-text"><small>{{ film.yili }}</small></span>
+                    <div class="buttons d-flex flex-wrap justify-content-between ">
+                        <a href="{{ film.film_joylashuvi.url }}">📥 </a>
+                        <a href="{% url 'details' film.pk %}" class="btn btn-outline-primary" >Details</a>
+                    </div>
+                </div>
+            </div>  
+            <!-- Product Cart End -->
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+<!-- Product Cart End -->
+</div> 
+{% endblock content %}

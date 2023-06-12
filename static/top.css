@@ -1,0 +1,27 @@
+.link{
+    font-size: 20px;
+    color: black;
+    transition: 0.7s;
+}
+.link:hover{
+    padding: 7px;
+    background: black;
+    color: azure;
+}
+.con{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-around;
+    align-items: center;
+}
+.a{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    align-items: center;
+}
+           

@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'ilova.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+<div class="main">
+    <div class="nv">
+        <h4 class="text-info">category</h4>
+        {% for category in category %}
+        <a class="btn btn-outline-primary" href="{% url 'category' %}?category={{ category.name }}">{{ category.name }}</a>
+      {% endfor %}
+    </div>
+
+<!-- Product Cart Start -->
+ <div class="container">
+    <div class=" w-100 mt-4">
+        <div class="d-flex flex-wrap justify-content-between">
+            <h4 class="d-block" >filmlar</h4>
+            <form class="d-flex" method="get" action="{% url 'appHome' %}">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-outline-dark" type="submit">Search</button>
+              </form>
+        </div>
+        
+        <div class="d-flex flex-wrap justify-content-between ">
+            {% for ilova in ilova %}
+            <!-- Product Cart Start -->
+            <div class="card border border-0 shadow-sm d-inline-block m-1 mt-3" style="width: 16.5rem;" >
+                <img height="200" class=" card-img-top" src="{{ ilova.rasm.url }}" alt="">
+                <div class="card-body">
+                    <h6 class="align-center card-title">{{ ilova.title }}</h6>
+                    <span class="center card-text"><small>{{ ilova.autor }}</small></span>
+                    <div class="buttons d-flex flex-wrap justify-content-between ">
+                        <a href="{{ ilova.apk.url }}" class="btn btn-outline-primary">📥</a>
+                    </div>
+                </div>
+            </div>  
+            <!-- Product Cart End -->
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+<!-- Product Cart End -->
+</div> 
+{% endblock content %}
+`

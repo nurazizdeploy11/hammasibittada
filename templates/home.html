@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+<style>
+    /* contact */
+.contact{
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}
+.contact>.text-box{
+    width: 40%;
+}
+.contact>form{
+    width: 40%;
+}
+</style>
+<header>
+    <div class="container">
+        <h1>Hammasi Bittada</h1>
+        <h3>Ushbu Web sayt hammasi bittta qiladi</h3>
+        <div class="wrap_btn">
+            <button class="btn btn-warning"><a href="{% url 'tvHome' %}">Tv</a></button>
+            <button class="btn btn-danger"><a href="{% url 'musicHome' %}">Music</a></button>
+            <button class="btn btn-success"><a href="{% url 'appHome' %}">Ilovalar</a></button>
+            <button class="btn btn-secondary"><a href="{% url 'kitobHome' %}">Kitoblar</a></button>
+            <button class="btn btn-info"><a href="{% url 'tursHome' %}">Tristik Obyektlar</a></button>
+            <button class="btn btn-warning"><a href="{% url 'darsHome' %}">Online Darslar</a></button>
+        </div>
+    </div>
+</header>
+<div class="contact" id="contact">
+    <div class="text-box">
+      <h1>Contact us</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates in impedit suscipit minus reprehenderit id facilis laudantium ipsum aspernatur dolorum voluptate obcaecati eveniet veritatis cupiditate cumque libero veniam, est reiciendis!</p>
+      <span class="fa fa-phone"></span>+998 33 166 19 81
+      <span class="fa fa-envelope-o"></span>nuraziznarziqulov@.com
+    </div>
+    <form name="contact" method="POST" data-netlify="true">
+        {% csrf_token %}
+        <label class="form-label">Ismingiz:</label>
+        <input type="text" name="name" class="form-control">
+
+        <label class="form-label">Telefon raqamingiz:</label>
+        <input type="number" name="tel" class="form-control"/>
+
+
+        <label for="exampleFormControlTextarea1" class="form-label">Xabaringiz:</label> 
+        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+        <br>
+        <button type="submit" class="btn btn-outline-success">Send</button>
+        <br>
+        <br>
+
+    </form>
+  </div>
+{% endblock content %}

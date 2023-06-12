@@ -1,0 +1,12 @@
+1-filmllar 
+2-musiqalar
+3-ilovalar
+4-kitoblar
+5-tristik obyektlar
+6-online darslar
+7-online do`kolar
+
+____________________________________
+
+Login == "nuraziz_narziqulov"
+Password == "nurjp123"

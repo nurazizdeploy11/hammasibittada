@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hammasi Bittada</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'top.css' %}">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="con">
+                <h1 class="logo">Hammasi Bittada</h1>
+                <div class="a">
+                    <a href="{% url 'home' %}#contact" class="link" style="text-decoration: none;">Contact</a>
+                    <a href="{% url 'home' %}" class="link" style="text-decoration: none;">About</a>
+                </div>      
+            </div>   
+            <ul class="nav-links">
+                <li class="nav-link bir"><a href="{% url 'tvHome' %}">Tv</a></li>
+                <li class="nav-link ikki"><a href="{% url 'musicHome' %}">Music</a></li>
+                <li class="nav-link uch"><a href="{% url 'appHome' %}">Ilovalar</a></li>
+                <li class="nav-link tort"><a href="{% url 'kitobHome' %}">Kitoblar</a></li>
+                <li class="nav-link besh"><a href="{% url 'tursHome' %}">Tristik Obyektlar</a></li>
+                <li class="nav-link olti"><a href="{% url 'darsHome' %}">Online Darslar</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>film/detail</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ film.rasmi.url }}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+                <h1>nomi:{{ film.nomi }}</h1>
+                <h1>yili:{{ film.yili }}</h1>
+                <p>{{ film.malumot }}</p>
+                <a class="btn btn-outline-success" href="{{ film.film_joylashuvi.url }}">yuklash</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <video src="{{ film.film_joylashuvi.url }}" controls width="100%"></video>
+    <center></center>
+</body>
+</html>
+
